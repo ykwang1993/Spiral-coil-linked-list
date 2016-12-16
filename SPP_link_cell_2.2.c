@@ -75,8 +75,8 @@ void inputParameters_LC(real *delta_t, real *t_end, int *N, int *nc, real *l, re
 	
 	scanf("%d %lf %lf %lf",N,&kl_long,&kl_short,&k_fene);
 
-    l[0] = 120.;
-    l[1] = 120.;
+    l[0] = 240.;
+    l[1] = 240.;
     *delta_t = 5e-5;
     *r_cut = 2.5;
     *t_end = 10.;
@@ -135,7 +135,7 @@ void RanInitial(Particle **order,int N)
 void initData_LC(int N, Cell *grid, int *nc, real *l, Particle **order){
 
 	char path[80];
-    int pnc=1,kc[DIM],iniCol=96,yCount=1,ySign=1;
+    int pnc=1,kc[DIM],iniCol=192,yCount=1,ySign=1;
     real x0,y0,db=1.12*D;
     ParticleList *current;
 
@@ -147,7 +147,7 @@ void initData_LC(int N, Cell *grid, int *nc, real *l, Particle **order){
         grid[i]=NULL;
 
     x0=0.5*db;
-    y0=60.;
+    y0=l[1]/2.;
 
     for (int i=1; i<=N; i++){
 
